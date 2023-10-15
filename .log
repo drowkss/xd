@@ -1,0 +1,17 @@
+#!bin/bash
+bot(){
+clear && clear
+read -p "Ingrese su token: " token
+echo "${token}">token
+read -p "Ingrese su id: " idd
+echo "${idd}">adminID
+screen node bot.js && reboot
+}
+update(){
+npm install && npm audit fix && reboot
+}
+case $1 in 
+--update)update ;;
+--confbot)bot ;;
+esac
+
